@@ -1,0 +1,137 @@
+/* this is the top styling of the component*/
+.inside {
+  display: grid;
+  place-items: center;
+  height: 100vh;
+  background: linear-gradient(180deg, #ae9595 0%, rgba(255, 255, 255, 0) 100%);
+}
+.inside__body {
+  display: flex;
+  height: 90vh;
+  width: 90vw;
+  background-color: white;
+  box-shadow: teal;
+  box-shadow: 5px 20px 10px rgba(92, 116, 106, 0.7);
+  display: flex;
+}
+/* this is the styling of the Right part*/
+
+.inside__right {
+  flex: 0.65;
+  display: flex;
+  flex-direction: column;
+}
+.inside__rightHeader {
+  padding: 15px 3px 15px 10px;
+  display: flex;
+  background: rgba(196, 196, 196, 0.47);
+  border-left: 1px solid rgb(182, 179, 179);
+}
+.inside__rightHeaderInfo {
+  flex: 1;
+  padding-left: 15px;
+}
+.inside__rightHeaderAvatar {
+  margin: 0 10px;
+}
+.inside__rightChat {
+  background-image: url("../files/back.jpg");
+  background-repeat: repeat;
+  flex: 1;
+  overflow-y: auto;
+}
+.inside__rightSend {
+  display: flex;
+  padding: 15px;
+}
+.inside__rightSend > input {
+  flex: 1;
+  outline-width: 0;
+  border: none;
+  padding-left: 20px;
+}
+.inside__rightChatMsg {
+  width: fit-content;
+  max-width: 40%;
+}
+.inside__rightChatMsg > span {
+  color: white;
+  padding-left: 15px;
+  font-size: xx-small;
+}
+.inside__rightChatMsg > p {
+  background-color: rgb(255, 255, 255);
+  margin: 5px 10px;
+  padding: 10px;
+  border-radius: 10px;
+}
+.inside__rightChatMsgOther {
+  margin-left: auto;
+}
+.inside__rightChatMsgOther > p {
+  background-color: #c2e6a7;
+}
+
+/* this is the styling of the left part*/
+
+.inside__left {
+  display: flex;
+  flex-direction: column;
+  flex: 0.35;
+}
+
+.inside__LeftHeader {
+  display: flex;
+  padding: 15px 3px 15px 10px;
+  background: rgba(196, 196, 196, 0.47);
+}
+.inside__avatarUser {
+  margin-right: 10px;
+}
+.inside__LeftHeaderInfo {
+  flex: 1;
+}
+.inside__LeftHeaderInfo > h3 {
+  color: #0af422;
+}
+.inside__LeftHeaderInfo > p {
+  color: #15729a;
+}
+.inside__headerSettingsIcon {
+  margin: 10px 0 10px 10px;
+}
+.MuiSvgIcon-root {
+  font-size: 27px !important;
+}
+.inside__search {
+  display: flex;
+  align-items: center;
+  padding: 15px 10px;
+}
+.inside__searchField {
+  outline-width: 0;
+  border: none;
+  margin-left: 10px;
+}
+.inside__contacts {
+  flex: 1;
+  background-color: #e5e5e5;
+  overflow-y: auto;
+}
+.inside__contactsEach {
+  display: flex;
+  padding: 15px 0 15px 10px;
+  cursor: pointer;
+}
+.inside__contactsEach:hover {
+  background-color: #bbb3b3;
+}
+.inside__contactsEachAvatar {
+  margin-right: 10px;
+}
+.inside__contactsEachInfo > h3 {
+  color: #004156;
+}
+.inside__contactsEachSelected {
+  background-color: #e7cfcf;
+}
