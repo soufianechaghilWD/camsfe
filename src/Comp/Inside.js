@@ -152,6 +152,18 @@ function Inside() {
                             <span>Tue, 29 Dec 2020 09:54:57 GMT</span>
                             <p>Man what's going onMan what's going onMan what's going onMan what's going onMan what's going onMan what's going onMan what's going onMan what's going on</p>
                         </div>
+                        <div className="inside__rightChatMsg ">
+                            <span>Tue, 29 Dec 2020 09:54:57 GMT</span>
+                            <p>Man what's going onMan what's going onMan what's going onMan what's going onMan what's going onMan what's going onMan what's going onMan what's going on</p>
+                        </div>
+                        <div className="inside__rightChatMsg inside__rightChatMsgOther">
+                            <span>Tue, 29 Dec 2020 09:54:57 GMT</span>
+                            <p>Man what's going onMan what's going onMan what's going onMan what's going onMan what's going onMan what's going onMan what's going onMan what's going on</p>
+                        </div>
+                        <div className="inside__rightChatMsg inside__rightChatMsgOther">
+                            <span>Tue, 29 Dec 2020 09:54:57 GMT</span>
+                            <p>Man what's going onMan what's going onMan what's going onMan what's going onMan what's going onMan what's going onMan what's going onMan what's going on</p>
+                        </div>
                     </div>
                     <div className="inside__rightSend">
                         <SentimentSatisfiedIcon className="inside__rightSendIconEmo" />

@@ -1,0 +1,74 @@
+.signup {
+  display: grid;
+  place-items: center;
+  height: 100vh;
+  background: linear-gradient(180deg, #ae9595 0%, rgba(255, 255, 255, 0) 100%);
+}
+.signup__body {
+  display: flex;
+  height: 90vh;
+  width: 90vw;
+  flex-direction: column;
+}
+.signup__body > h1 {
+  text-align: center;
+  margin-bottom: 50px;
+  font-size: 50px;
+  font-family: "Risque", serif, sans-serif;
+}
+.signup__content {
+  display: flex;
+}
+.signup__left {
+  flex: 0.59;
+}
+.signup__left > img {
+  width: 100%;
+}
+.signup__right {
+  flex: 0.41;
+  display: grid;
+  place-items: center;
+}
+.signup__right > form {
+  margin-left: 65px;
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(141, 141, 141);
+  min-height: 450px;
+  padding: 50px 50px 0;
+  max-width: 500px;
+}
+.signup__right > form > input {
+  max-width: 350px;
+  margin: 0 0 25px;
+  padding: 7px 0 7px 7px;
+  outline-width: 0;
+  border-radius: 3 px;
+}
+.signup__right > form > button {
+  max-width: 350px;
+  width: 75%;
+  text-align: center;
+  display: block;
+  margin: 25px auto;
+  padding: 7px 0;
+  color: white;
+  background-color: #15729a;
+  border: none;
+  border-radius: 10px;
+  font-size: large;
+  font-weight: 500;
+  font-family: "Righteous", serif, sans-serif;
+  cursor: pointer;
+}
+.signup__right > form > button:hover {
+  background-color: #085d81;
+  color: rgb(145, 144, 144);
+}
+.signup__right > form > p {
+  font-weight: 700;
+}
+.signup__right > form > p > span {
+  color: #15729a;
+}
