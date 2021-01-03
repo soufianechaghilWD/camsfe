@@ -2,6 +2,7 @@ import './App.css';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import Inside from './Comp/Inside'
 import Signup from './Comp/Signup'
+import Signin from './Comp/Signin'
 
 function App() {
   return (
@@ -15,7 +16,7 @@ function App() {
             <Signup />
           </Route>
           <Route path="/"> 
-            <h1>The signin normaly</h1>
+          <Signin />
           </Route>
         </Switch>
       </div>
