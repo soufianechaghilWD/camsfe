@@ -1,6 +1,7 @@
 export const initialState = {
     user: null,
-    pic: null
+    pic: null,
+    users : null
 };
 const reducer = (state, action) => {
     switch (action.type) {
@@ -8,6 +9,11 @@ const reducer = (state, action) => {
         return {
           ...state,
           user: action.user
+        }
+      case "SET__USERS":
+        return {
+          ...state,
+          users : action.users
         }
       case "USER__LOGOUT":
         return {

@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import '../Style/Inside.css'
 import Avatar from '@material-ui/core/Avatar';
 import SettingsIcon from '@material-ui/icons/Settings';
@@ -8,24 +8,32 @@ import SentimentSatisfiedIcon from '@material-ui/icons/SentimentSatisfied';
 import SendIcon from '@material-ui/icons/Send';
 import { useStateValue } from "./StateProvider";
 import { useHistory }from 'react-router-dom';
-
+import axios from '../axios'
+import { getWhatItsNeeded } from '../outils'
 
 function Inside() {
 
-    const [{ user }, dispatch] = useStateValue();
+    const [ state , dispatch] = useStateValue();
     const history = useHistory();
+    const [contacts, setContacts] = useState([])
+    const [inputSearch, setInputSearch] = useState('')
+    const [searchInputFocus, setSearchInputFocus] = useState(false)
 
     useEffect(() => {
-        if(user === null){
+        if(state.user === null){
             history.push('/signin')
         }
+    }, [])
+
+    useEffect(() => {
+        axios.get(`/getUserInfo?id=${state?.user?.uid}`)
+        .then(answer => setContacts(answer.data.contacts))
     }, [])
 
     const theRightSize = (str) => {
         if(str.length < 36) return str
         return str.split('').slice(0, 36).join('') + "..."
     }
-
 
     return (
         <div className="inside">
@@ -41,10 +49,38 @@ function Inside() {
                     </div>
                     <div className="inside__search">
                         <SearchIcon className="inside__searchIcon" />
-                        <input type="text" placeholder="Search or start a new chat" className="inside__searchField" />
+                        <input type="text" onFocus={e => setSearchInputFocus(true)} onBlur={e => setSearchInputFocus(false)}  value={inputSearch} onChange={e => setInputSearch(e.target.value)} placeholder="Search or start a new chat" className="inside__searchField" />
                     </div>
+                    {
+                            (searchInputFocus && inputSearch !== '') && <div className="inside__searchOutput" >
+                                {getWhatItsNeeded(state.users, inputSearch).length === 0 ? <p>SORRY</p> : 
+                                
+                                getWhatItsNeeded(state.users, inputSearch).map(ele => (
+                                    <div className="inside__contactsEach">
+                                        <Avatar className="inside__contactsEachAvatar">{ele.userName.toUpperCase()[0]}</Avatar>
+                                        <div className="inside__contactsEachInfo">
+                                            <h3>{ele.userName}</h3>
+                                            <p>{theRightSize('This is our last message with lahcen')}</p>
+                                        </div>
+                                    </div>
+                                ))
+
+                                }
+                            </div>
+                    }
                     <div className="inside__contacts">
-                        <div className="inside__contactsEach inside__contactsEachSelected">
+
+                        {/*contacts.map(contact => (
+                            <div className="inside__contactsEach">
+                                <Avatar className="inside__contactsEachAvatar">L</Avatar>
+                                <div className="inside__contactsEachInfo">
+                                    <h3>Omar</h3>
+                                    <p>{theRightSize('This is our last message with lahcen')}</p>
+                                </div>
+                            </div>
+                        ))*/}
+                        
+                        <div className="inside__contactsEach inside__contactsEachSelected" >
                             <Avatar className="inside__contactsEachAvatar">L</Avatar>
                             <div className="inside__contactsEachInfo">
                                 <h3>Lahcen</h3>
@@ -135,6 +171,7 @@ function Inside() {
                                 <p>{theRightSize('This is our last message with lahcen')}</p>
                             </div>
                         </div>
+                        
                     </div>
                 </div>
                 <div className="inside__right">

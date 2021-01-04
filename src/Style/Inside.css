@@ -113,6 +113,13 @@
   border: none;
   margin-left: 10px;
 }
+.inside__searchOutput {
+  max-height: 42%;
+  overflow-y: auto;
+}
+.inside__searchOutput {
+  background-color: #0af422;
+}
 .inside__contacts {
   flex: 1;
   background-color: #e5e5e5;
