@@ -68,7 +68,11 @@
 }
 .signup__right > form > p {
   font-weight: 700;
+  cursor: pointer;
 }
 .signup__right > form > p > span {
   color: #15729a;
+}
+.signup__right > form > p > span:hover {
+  text-decoration: underline;
 }

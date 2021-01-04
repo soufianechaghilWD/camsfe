@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import '../Style/Inside.css'
 import Avatar from '@material-ui/core/Avatar';
 import SettingsIcon from '@material-ui/icons/Settings';
@@ -6,15 +6,26 @@ import SearchIcon from '@material-ui/icons/Search';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
 import SentimentSatisfiedIcon from '@material-ui/icons/SentimentSatisfied';
 import SendIcon from '@material-ui/icons/Send';
+import { useStateValue } from "./StateProvider";
+import { useHistory }from 'react-router-dom';
 
 
 function Inside() {
 
+    const [{ user }, dispatch] = useStateValue();
+    const history = useHistory();
+
+    useEffect(() => {
+        if(user === null){
+            history.push('/signin')
+        }
+    }, [])
 
     const theRightSize = (str) => {
         if(str.length < 36) return str
         return str.split('').slice(0, 36).join('') + "..."
     }
+
 
     return (
         <div className="inside">
