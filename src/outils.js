@@ -25,11 +25,11 @@ const generatestring = (str1, str2) => {
 export const generate = (str1, str2) => {
     return generateNumber(str1, str2)+generatestring(str1, str2)
 }
-export const getWhatItsNeeded = (data, inp) => {
+export const getWhatItsNeeded = (data, inp, id) => {
     return data.filter(ele => {
         if(inp.length <= ele.userName.length) {
             let tmp = ele.userName.split('').slice(0, inp.length).join('')
-            if(tmp === inp) return ele
+            if(tmp === inp && ele._id !== id) return ele
         }
     })
 }

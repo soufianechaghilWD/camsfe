@@ -109,6 +109,7 @@
   padding: 15px 10px;
 }
 .inside__searchField {
+  flex: 1;
   outline-width: 0;
   border: none;
   margin-left: 10px;
@@ -118,7 +119,13 @@
   overflow-y: auto;
 }
 .inside__searchOutput {
-  background-color: #0af422;
+  background-color: rgba(13, 209, 33, 0.2);
+}
+.inside__searchOutput > .inside_eachSearch:hover {
+  background-color: rgba(13, 209, 33, 0.8);
+}
+.inside__searchOutput:focus {
+  outline: none;
 }
 .inside__contacts {
   flex: 1;
